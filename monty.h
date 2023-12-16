@@ -43,5 +43,7 @@ void ann_open_error(const char *fileann);
 void ann_unknown_instruction(int line_number, char opcode[]);
 void ann_push_error(int line_number);
 void eddiepint(stack_t **stack, unsigned int line_number);
+void annpop(stack_t **stack, unsigned int line_number);
+
 
 #endif

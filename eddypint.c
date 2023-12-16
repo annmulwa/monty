@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * eddypint - prints the element at the top of the stack
+ * eddiepint - prints the element at the top of the stack
  * @stack: double pointer to the stack
  * @line_number: line number of the file
  */
