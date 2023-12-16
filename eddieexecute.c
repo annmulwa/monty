@@ -34,6 +34,8 @@ void eddie_execute(FILE *annfile, stack_t **stack,
 			eddie_push(stack, line_number, annfile, stackelem);
 		else if (strcmp(opcode, "pall") == 0)
 			annpall(stack);
+		else if (strcmp(opcode, "pint") == 0)
+			eddiepint(stack, line_number);
 		else
 		{
 			ann_unknown_instruction(line_number, opcode);
