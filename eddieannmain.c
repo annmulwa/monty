@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	FILE *annfile;
 	char opcode[120];
-	int stackelem, line_number = 1;
+	int stackelem, line_number = 0;
 	stack_t *stack = NULL;
 
 	if (argc != 2)
