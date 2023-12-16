@@ -33,6 +33,14 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void eddiepush(stack_t **stack, unsigned int line_number, int stackelem);
+void eddiepush(stack_t **stack, unsigned int line_number, const char *eddiearg);
 void annpall(stack_t **stack);
+FILE *open_annfile(const char *fileann);
+void eddie_execute(FILE *annfile, stack_t **stack, int line_number, char opcode[], int *stackelem);
+void eddie_push(stack_t **stack, int line_number, FILE *annfile, int *stackelem);
+void ann_print_error(void);
+void ann_open_error(const char *fileann);
+void ann_unknown_instruction(int line_number, char opcode[]);
+void ann_push_error(int line_number);
+
 #endif

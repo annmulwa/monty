@@ -4,10 +4,11 @@
  * eddiepush - adds an element on to the stack
  * @line_number: number of line in the file
  * @stack: double pointer to the stack
- * @stackelem: element to be added to the stack
+ * @eddiearg: element to be added to the stack
  */
-void eddiepush(stack_t **stack, unsigned int line_number, int stackelem)
+void eddiepush(stack_t **stack, unsigned int line_number, const char *eddiearg)
 {
+	int stackelem;
 	stack_t *eddie_node;
 
 	if (stack == NULL)
@@ -15,6 +16,7 @@ void eddiepush(stack_t **stack, unsigned int line_number, int stackelem)
 		fprintf(stderr, "L%d: Stack Underflow\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+	stackelem = atoi(eddiearg);
 	eddie_node = malloc(sizeof(stack_t));
 	if (eddie_node == NULL)
 	{

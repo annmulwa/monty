@@ -15,37 +15,12 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
+		ann_print_error();
 		exit(EXIT_FAILURE);
 	}
-	annfile = fopen(argv[1], "r");
-	if (!annfile)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
-	while (fscanf(annfile, "%s", opcode) != EOF)
-	{
-		line_number++;
-		if (strcmp(opcode, "push") == 0)
-		{
-			if (fscanf(annfile, "%d", &stackelem) != 1)
-			{
-				fprintf(stderr, "L%d: usage: push integer\n", line_number);
-				exit(EXIT_FAILURE);
-			}
-			eddiepush(&stack, line_number, stackelem);
-		}
-		else if (strcmp(opcode, "pall") == 0)
-		{
-			annpall(&stack);
-		}
-		else
-		{
-			fprintf(stderr, "L%d: Unknown instruction %s\n", line_number, opcode);
-			exit(EXIT_FAILURE);
-		}
-	}
+	annfile = open_annfile(argv[1]);
+	eddie_execute(annfile, &stack, line_number, opcode, &stackelem);
+
 	fclose(annfile);
 	return (0);
 }
