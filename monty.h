@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -47,4 +49,5 @@ void annpop(stack_t **stack, unsigned int line_number);
 void eddieswap(stack_t **stack, unsigned int line_number);
 void annadd(stack_t **stack, unsigned int line_number);
 void eddienop(stack_t **stack, unsigned int line_number);
+
 #endif
