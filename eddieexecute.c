@@ -42,6 +42,8 @@ void eddie_execute(FILE *annfile, stack_t **stack,
 			eddieswap(stack, line_number);
 		else if (strcmp(opcode, "add") == 0)
 			annadd(stack, line_number);
+		else if (strcmp(opcode, "nop") == 0)
+			eddienop(stack, line_number);
 		else
 		{
 			ann_unknown_instruction(line_number, opcode);

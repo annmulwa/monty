@@ -46,4 +46,5 @@ void eddiepint(stack_t **stack, unsigned int line_number);
 void annpop(stack_t **stack, unsigned int line_number);
 void eddieswap(stack_t **stack, unsigned int line_number);
 void annadd(stack_t **stack, unsigned int line_number);
+void eddienop(stack_t **stack, unsigned int line_number);
 #endif
