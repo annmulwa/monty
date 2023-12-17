@@ -38,6 +38,8 @@ void eddie_execute(FILE *annfile, stack_t **stack,
 			eddiepint(stack, line_number);
 		else if (strcmp(opcode, "pop") == 0)
 			annpop(stack, line_number);
+		else if (strcmp(opcode, "swap") == 0)
+			eddieswap(stack, line_number);
 		else
 		{
 			ann_unknown_instruction(line_number, opcode);
